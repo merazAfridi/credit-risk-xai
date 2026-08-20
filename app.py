@@ -5,6 +5,18 @@ import os
 import gradio as gr
 import joblib
 
+try:
+    # only present on Hugging Face's ZeroGPU runtime; a no-op decorator locally
+    # or on any other host, so this import can't break running elsewhere
+    import spaces
+except ImportError:
+    class _NoOpSpaces:
+        @staticmethod
+        def GPU(fn):
+            return fn
+
+    spaces = _NoOpSpaces()
+
 MODEL_PATH = "fair_loan_model.joblib"
 COLUMNS_PATH = "model_columns.joblib"
 TEMPLATE_PATH = "template_row.joblib"
@@ -146,6 +158,7 @@ def build_reasons_html(applicant_row, contributions, final_denied, raw_denial_pr
     """
 
 
+@spaces.GPU
 def predict_live(age, income, credit_score, loan_amount, gender):
     applicant = template_row.copy()
     applicant["Age"] = age
