@@ -397,11 +397,13 @@ CUSTOM_CSS = """
     text-wrap: balance;
 }
 .app-header p {
+    width: 100%;
     font-size: clamp(0.85rem, 0.8rem + 0.2vw, 0.95rem);
     line-height: 1.55;
     color: var(--text-2);
     max-width: 68ch;
-    margin: 0 auto;
+    margin: 0 auto !important;
+    text-align: center !important;
     text-wrap: balance;
 }
 
