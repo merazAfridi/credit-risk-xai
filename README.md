@@ -1,7 +1,7 @@
 ---
 title: Credit Risk Xai
 emoji: 🔍
-colorFrom: orange
+colorFrom: yellow
 colorTo: pink
 sdk: gradio
 sdk_version: 6.24.0
