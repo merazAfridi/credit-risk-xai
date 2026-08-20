@@ -1,16 +1,3 @@
----
-title: Credit Risk Xai
-emoji: 🔍
-colorFrom: yellow
-colorTo: pink
-sdk: gradio
-sdk_version: 6.24.0
-python_version: '3.12'
-app_file: app.py
-pinned: false
-license: mit
----
-
 # Credit Risk Analysis & Decision Making Using Explainable AI
 
 A loan approval model with per-decision explanations and a fairness audit across demographic groups.
@@ -73,7 +60,3 @@ requirements.txt
 ## Stack
 
 Gradio, LightGBM, scikit-learn, Fairlearn, pandas
-
-## Disclaimer
-
-Built for demonstration and educational purposes. Not a production credit decisioning system. Do not use to make real lending decisions.
